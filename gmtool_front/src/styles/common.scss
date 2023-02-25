@@ -1,0 +1,31 @@
+/*
+* scss 기본 문법
+* https://seokzin.tistory.com/entry/SCSS-SCSS-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC
+*/
+
+@import '~bootstrap/scss/bootstrap';
+//@import '~bootswatch/dist/slate/variables';
+
+@mixin default-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  thead {
+    position: sticky;
+    background-color: $body-bg;
+    top: 0px;
+    th {
+      border-top: 1px solid $gray-600;
+      border-bottom: 2px solid $black;
+      white-space: nowrap;
+    }
+  }
+  tbody {
+    td {
+      white-space: nowrap;
+    }
+  }
+}
+
+@mixin debug-border {
+  border: 1px solid $red;
+}

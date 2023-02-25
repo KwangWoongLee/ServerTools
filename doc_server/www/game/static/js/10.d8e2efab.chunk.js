@@ -1,0 +1,1 @@
+(this.webpackJsonpgame_protocol=this.webpackJsonpgame_protocol||[]).push([[10],{58:function(t,o,a){"use strict";a.r(o),o.default=a.p+"static/media/login.3de7a615.txt"}}]);

@@ -1,0 +1,18 @@
+{
+  "socket_io": {
+    "host": "35.212.169.117",
+    "port": 6379,
+    "key": "lamp_test"
+  },
+  "main": {
+    "host": "35.212.169.117",
+    "port": 6379,
+    "db": 0
+  },
+  "sub": {
+    "host": "35.212.169.117",
+    "port": 6379,
+    "db": 1,
+    "subscribe": ["server_message"]
+  }
+}

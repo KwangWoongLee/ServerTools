@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+message Request {
+
+}
+
+
+message Response {
+    bool result = 1;
+}
+
+message ServerInfo {
+  string    host = 1;
+  uint32     port = 2;
+  string    region = 3;
+  RoomList  roomList = 4;
+}
+
+
+message RegistServerRequest {
+	ServerInfo serverInfo = 1;
+}
+
+
+message RegistServerResponse {
+	bool result = 1;
+	uint32 serverId = 2;
+}
+
+
+
+message RemoveServerRequest {
+    uint32  serverId = 1;
+    string  region = 2;
+}
+
+
+
+message ServerInfoList 
+{
+  repeated ServerInfo serverInfos = 1;
+}
+
+message PUser
+{
+    uint64 aidx = 1;
+    string name = 2;
+    string region = 3;
+}
+
+message RoomInfo
+{
+    uint64      hostAidx = 1;
+    string      title = 2;
+    uint32      mapId = 3;
+    uint32      minMemberCount = 4;
+    uint32      maxMemberCount = 5;
+    uint32      nowMemberCount = 6;
+	uint64      roomId = 7;
+	bool		locked = 8;
+}
+
+
+//////////////////////////////////////////////
+
+message GetRoomListRequest
+{
+    string region = 1;
+}
+
+//////////////////////////////////////////////
+
+message CreateRoomRequest
+{
+	string		region = 1;
+    uint64      hostAidx = 2;
+    string      title = 3;
+    uint32      mapId = 4;
+    uint32      minMemberCount = 5;
+    uint32      maxMemberCount = 6;
+}
+
+message CreateRoomResponse
+{
+    uint64 roomId = 1;
+}
+///////////////////////////////////////////////
+
+message CreateRoomTCPRequest
+{
+	string		region = 1;
+	uint32		serverId = 2;
+	uint64		roomId = 3;
+	uint64		tcpRoomId = 4;
+}
+
+message CreateRoomTCPResponse
+{
+    uint64      hostAidx = 1;
+    string      title = 2;
+    uint32      mapId = 3;
+    uint32      minMemberCount = 4;
+    uint32      maxMemberCount = 5;
+	uint64		roomId = 6;
+	uint64		tcpRoomId = 7;
+}
+
+message RemoveRoomTCPRequest
+{
+    uint64      roomId = 1;
+}
+
+
+///////////////////////////////////////////////
+
+message EnterRoomRequest
+{
+	uint64	aidx = 1;
+	string name = 2;
+	string region = 3;
+    uint64	roomId = 4;
+}
+
+message EnterRoomResponse
+{
+	bool	success = 1;
+	string	message = 2;
+	string	host = 3;
+	uint32	port = 4;
+	uint64	tcpRoomId = 5;
+}
+
+message LeaveRoomRequest
+{
+	uint64	aidx = 1;
+    uint64	roomId = 2;
+}
+
+message StartGameRequest
+{
+	uint64	hostAidx = 1;
+    uint64	roomId = 2;
+}
+
+
+message GetRoomListResponse 
+{
+  repeated RoomInfo roomInfos = 1;
+}
+
+message RoomList
+{
+  repeated RoomInfo roomInfos = 1;
+}
+
+service MatchService {
+    // node 2 match(game)
+    rpc GetRoomList (GetRoomListRequest) returns (GetRoomListResponse) {}; // region 확인 후, 해당 리젼 룸 리스트 제공
+    rpc CreateRoom (CreateRoomRequest) returns (CreateRoomResponse) {}; // go tcp
+    rpc EnterRoom (EnterRoomRequest) returns (EnterRoomResponse) {};
+    rpc LeaveRoom (LeaveRoomRequest) returns (Response) {};
+
+    rpc StartGame (StartGameRequest) returns (Response) {}; // 방장만 가능
+
+    // match 2 node(chat)
+    //rpc EnterUser (EnteredRoomInfo) returns (Response) {}; // 같은방에서의 채팅만 허용
+    //rpc LeaveUser (PUser) returns (Response) {};
+
+    // match 2 tcp
+    //rpc CreateRoomTCP (CreateRoomTCPRequest) returns (stream CreateRoomTCPResponse) {}; // User의 region 확인해서 가능한 서버에서 룸 생성
+    rpc CreateRoomTCP (stream CreateRoomTCPRequest) returns (stream CreateRoomTCPResponse) {}; // User의 region 확인해서 가능한 서버에서 룸 생성
+    // tcp 2 match
+    rpc RegistServer (RegistServerRequest) returns (RegistServerResponse) {};
+    rpc RemoveServer (RemoveServerRequest) returns (Response) {};
+}

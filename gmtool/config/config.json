@@ -1,0 +1,19 @@
+{
+  "port": 1100,
+  "sio_redis_connect": true,
+  "log": {
+    "path": "./logs",
+    "filename": "gmtool_",
+    "level": {
+      "console": "debug",
+      "file": "info"
+    }
+  },
+  "match_info": {
+    "host": "localhost",
+    "port": 5001
+  },
+  "server_reset_password": "LPR7ByQCnxJRkiv4fdUdJ5OGU3V0OMV2jbk6snYD",
+  "debug": true,
+  "mode": "DEV"
+}

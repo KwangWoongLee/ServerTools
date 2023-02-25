@@ -1,0 +1,1 @@
+(this.webpackJsonpgame_protocol=this.webpackJsonpgame_protocol||[]).push([[9],{57:function(t,o,s){"use strict";s.r(o),o.default=s.p+"static/media/item_list.6f77617b.txt"}}]);

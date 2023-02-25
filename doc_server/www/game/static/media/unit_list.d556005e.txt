@@ -1,0 +1,25 @@
+가진 유닛 리스트를 반환합니다.
+유닛이 존재하지 않으면 에러를 뱉습니다.
+
+  - Request -
+
+  - Response -
+    - unit_list 
+      - unit_code : 해당 유닛의 참조 번호입니다.
+
+unit_list : send = {
+  "aidx": 1,
+  "session": "63369789",
+  "cmd": 301
+}
+unit_list : recv = {
+  "data": {
+    "unit_list": [
+      {
+        "unit_code": 30001
+      }
+    ]
+  },
+  "cmd": 302,
+  "status": 200
+}

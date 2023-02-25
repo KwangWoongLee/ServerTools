@@ -1,0 +1,65 @@
+syntax = "proto3";
+package Protocol;
+
+import "enum.proto";
+import "struct.proto";
+
+message C_ENTER_GAME
+{
+	uint64		aidx = 1;
+	PlayerType	playerType = 2;
+	uint64		roomid = 3;
+	string		nickname = 4;
+}
+
+message C_LEAVE_GAME
+{
+}
+
+message S_ENTER_GAME
+{
+	bool success = 1;
+	uint64 myPlayerId = 2;
+	repeated PActor exisitingActors = 3;
+}
+
+message S_LEAVE_GAME
+{
+}
+
+
+message C_BROADCAST_ROOM
+{
+	BroadCastType type = 1;
+}
+
+
+message S_ACTION
+{
+	uint64	tickCount = 1;
+	uint64	actorId = 2; 
+	Action playerAction = 3;
+	Pos pos = 4;
+}
+
+message S_SPAWN
+{
+	repeated PActor actors = 1;
+}
+
+message S_DESPAWN
+{
+	repeated PActor actors = 1;
+}
+
+message S_PING
+{}
+
+
+message C_PONG
+{}
+
+message C_ACTION
+{
+	repeated Action playerActions = 1;
+}

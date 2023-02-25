@@ -1,0 +1,35 @@
+
+    guest 계정을 sns 계정으로 전환
+     - login_type 이 guest 일때만 보낼수 있습니다. 
+
+  - Request -
+    - login_id : 변환할 sns login id 
+    - login_type : guest: 0,  affrecatv: 1,
+    - name : 변경할 사용자의 닉네임
+    - user_no : 아프리카 tv 로그인시 받은 user_no ( 스트링으로 보내주셔야 합니다. )
+                아프리카 로그인이 아닐 경우 비워서 보내주시면 됩니다.
+
+  - Response -
+    - login_id : 서버에 저장된 login id - 딱히 크게 쓰일곳은 없음
+
+
+    account_switching : send = {
+        "aidx": 28,
+        "session": "67897383",
+        "login_id": "testaccount2",
+        "login_type": 1,
+        "name": "testaccount2",
+        "user_no":"kaka23",
+        "cmd": 113
+    }
+
+    account_switching : recv = {
+        "data": {
+            "login_id": "aftv_testaccount2"
+        },
+        "cmd": 114,
+        "status": 200
+    }
+      
+
+	

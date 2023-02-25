@@ -1,0 +1,56 @@
+
+    - Request -
+      - os_type : 접속한 환경의 운영체제입니다. // 안드로이드 1 , ios 2
+      - login_id : 고유한 로그인 ID String
+      - login_type : guest: 0
+      - uuid : 디바이스 고유 아이디 - 광고아이디 등을 추천함
+      - version : 서버버전 , 현재 0.1.0 , 출시 이후 1.0.0 부터 시작 예정
+
+    - Response -
+      - user_info // 자신의 정보
+        - aidx : 자신의 account 인덱스입니다.
+        - name
+        - login_id
+        - login_type
+        - uuid 
+        - session : 세션정보입니다. 최초 세션이 유지됩니다 => 변경가능
+
+      - server_info // 서버정보
+        - version : 서버 버전입니다. 맨 뒤 번호는 틀려도 작동하나, 중간번호부터 다를 경우, 로그인 불가능
+        - status : 0 : 서버 오프 , 1 : 서버 온 => 서버 점검 시 오프됩니다.
+        - agreement : 개인정보 이용 약관 동의 내용이 담긴 값입니다. 
+        - service_term : 기타 약관이 담길 예정입니다. 임시.    
+
+      login : send = {
+        "os_type": 1,
+        "login_id": "Woongda",
+        "uuid": "Woongda",
+        "version": "0.1.0",
+        "login_type": 0,
+        "cmd": 103,
+        "aidx": 0,
+        "session": ""
+      }
+      login : recv = {
+        "data": {
+          "user_info": {
+            "aidx": 10,
+            "name": "(G)1660469000872-41480",
+            "login_id": "gst_Woongda",
+            "login_type": 0,
+            "uuid": "",
+            "agreement": 0,
+            "service_term": 0,
+            "session": "70159800"
+          },
+          "server_info": {
+            "version": "0.1.0",
+            "status": 1,
+            "agreement": "개인정보이용 약관 동의 \n 어쩌구 저쩌구 아라라라라",
+            "service_term": "이용 약관 동의 \n 어쩌구 저쩌구 아라라라라"
+          }
+        },
+        "cmd": 104,
+        "status": 200
+      }
+      

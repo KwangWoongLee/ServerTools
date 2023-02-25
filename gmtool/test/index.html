@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    const query_string = () => {
+      const params = {};
+      window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, (str, key, value) => params[key] = value);
+      return params;
+    }
+
+    let parentWindow = null;
+    $(() => {
+      parentWindow = window.opener;
+
+      if (parentWindow) {
+        const { code } = query_string();
+        const err = code ? null : "query parameter error";
+
+        const data = {
+          code,
+          err
+        }
+
+        setTimeout(() => parentWindow.postMessage(JSON.stringify(data), "*"), 3000)
+        //parentWindow.postMessage(JSON.stringify(data), "*");
+      } else {
+        alert('잘못된 접근입니다.')
+      }
+
+
+      let count = 0;
+      $('#send').click(() => {
+        count++;
+        parentWindow.postMessage(JSON.stringify({ count }), "*");
+      })
+    })
+  </script>
+  <title>TEST PAGE</title>
+</head>
+
+<body>
+  <h1>TEST PAGE</h1>
+  <hr />
+  <button id="send">sendPost</button>
+  <hr />
+</body>
+
+</html>

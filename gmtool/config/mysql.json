@@ -1,0 +1,11 @@
+{
+  "com": {
+    "waitForConnections": false,
+    "connectionLimit": 80,
+    "user": "klove0004",
+    "password": "Klove0004!@#",
+    "host": "35.212.169.117",
+    "port": 3306,
+    "database": "portpoliodb"
+  }
+}

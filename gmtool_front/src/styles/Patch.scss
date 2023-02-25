@@ -1,0 +1,27 @@
+@import './common.scss';
+
+.PatchRefData {
+  .Left {
+    max-height: 820px;
+    overflow-y: auto;
+    .card > .list-group {
+      cursor: pointer;
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+  .Right {
+    .TableData {
+      max-height: 750px;
+      overflow-y: auto;
+
+      table {
+        @include default-table;
+      }
+      ~ .more-btn {
+        width: 100%;
+      }
+    }
+  }
+}

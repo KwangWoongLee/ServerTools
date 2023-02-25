@@ -1,0 +1,20 @@
+자신의 경험치를 반환합니다.
+경험치는 처음 0으로 초기화됩니다.
+
+  - Request -
+
+  - Response -
+    - exp : 보유한 경험치입니다.
+
+  get_exp : send = {
+  "aidx": 1,
+  "session": "44326795",
+  "cmd": 203
+}
+  get_exp : recv = {
+    "data": {
+      "exp": 0
+    },
+    "cmd": 204,
+    "status": 200
+  }

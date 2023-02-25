@@ -1,0 +1,21 @@
+syntax = "proto3";
+package Protocol;
+
+import "enum.proto";
+
+message Pos
+{
+	float x = 1;
+	float y = 2;
+}
+
+message PActor
+{
+	uint64 id = 1;
+	ActorType type = 2;
+	Pos position = 3;
+	Action action = 4;
+	
+	optional PlayerType playerType = 5;
+	optional BlockType blockType = 6;
+}

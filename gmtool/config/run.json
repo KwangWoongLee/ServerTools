@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "PortPolio_game",
+      "script": "game.js",
+      "cwd": "./"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+가진 아이템 리스트를 반환합니다.
+
+  - Request -
+
+  - Response -
+    - idx : 해당 아이템의 인덱스입니다.
+    - item_code : 해당 아이템의 아이템 코드입니다.
+    - cnt : 해당 아이템의 갯수입니다.
+
+
+item_list : send = {
+  "aidx": 1,
+  "session": "63369789",
+  "cmd": 201
+}
+item_list : recv = {
+  "data": {
+    "item_list": [
+      {
+        "idx": 1,
+        "item_code": 40001,
+        "cnt": 0
+      },
+      {
+        "idx": 2,
+        "item_code": 40002,
+        "cnt": 20
+      },
+      {
+        "idx": 3,
+        "item_code": 40003,
+        "cnt": 20
+      }
+    ]
+  },
+  "cmd": 202,
+  "status": 200
+}

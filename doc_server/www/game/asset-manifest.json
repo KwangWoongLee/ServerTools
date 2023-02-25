@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "./static/css/main.ade5077f.chunk.css",
+    "main.js": "./static/js/main.08aa90f2.chunk.js",
+    "runtime-main.js": "./static/js/runtime-main.90a345fe.js",
+    "static/css/2.3e3f0fe1.chunk.css": "./static/css/2.3e3f0fe1.chunk.css",
+    "static/js/2.739c6e19.chunk.js": "./static/js/2.739c6e19.chunk.js",
+    "static/js/3.b3e0fcad.chunk.js": "./static/js/3.b3e0fcad.chunk.js",
+    "static/js/4.fbe5f95a.chunk.js": "./static/js/4.fbe5f95a.chunk.js",
+    "static/js/5.9576816c.chunk.js": "./static/js/5.9576816c.chunk.js",
+    "static/js/6.b608b344.chunk.js": "./static/js/6.b608b344.chunk.js",
+    "static/js/7.f5323cf0.chunk.js": "./static/js/7.f5323cf0.chunk.js",
+    "static/js/8.c463ec36.chunk.js": "./static/js/8.c463ec36.chunk.js",
+    "static/js/9.2884a921.chunk.js": "./static/js/9.2884a921.chunk.js",
+    "static/js/10.d8e2efab.chunk.js": "./static/js/10.d8e2efab.chunk.js",
+    "static/js/11.9059fa77.chunk.js": "./static/js/11.9059fa77.chunk.js",
+    "static/js/12.c11e7b5c.chunk.js": "./static/js/12.c11e7b5c.chunk.js",
+    "static/js/13.cf34462f.chunk.js": "./static/js/13.cf34462f.chunk.js",
+    "index.html": "./index.html",
+    "static/js/2.739c6e19.chunk.js.LICENSE.txt": "./static/js/2.739c6e19.chunk.js.LICENSE.txt",
+    "static/media/_code.txt": "./static/media/_code.f19d677a.txt",
+    "static/media/_comon_recv_data.txt": "./static/media/_comon_recv_data.54ae0778.txt",
+    "static/media/account_switching.txt": "./static/media/account_switching.c8d9e51e.txt",
+    "static/media/agreement.txt": "./static/media/agreement.5e839886.txt",
+    "static/media/api_token_reflush.txt": "./static/media/api_token_reflush.20fb905e.txt",
+    "static/media/get_exp.txt": "./static/media/get_exp.1c229652.txt",
+    "static/media/item_list.txt": "./static/media/item_list.6f77617b.txt",
+    "static/media/login.txt": "./static/media/login.3de7a615.txt",
+    "static/media/reg_id.txt": "./static/media/reg_id.8e4c7261.txt",
+    "static/media/unit_list.txt": "./static/media/unit_list.d556005e.txt",
+    "static/media/unit_trans.txt": "./static/media/unit_trans.be404e1c.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.90a345fe.js",
+    "static/css/2.3e3f0fe1.chunk.css",
+    "static/js/2.739c6e19.chunk.js",
+    "static/css/main.ade5077f.chunk.css",
+    "static/js/main.08aa90f2.chunk.js"
+  ]
+}

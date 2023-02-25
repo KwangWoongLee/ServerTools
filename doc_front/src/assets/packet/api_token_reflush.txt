@@ -1,0 +1,27 @@
+
+
+    api 토큰 갱신
+    expire 시간이 지나기 전에 갱신해줘야 합니다.
+        
+   - Request -
+   
+    
+   - Response -
+      - api_token : api 호출 헤더에 사용할 token 값입니다.
+      - api_token_expire : 호출후 이값의(초) 가 지날때까지 token이 유효합니다.
+   
+    api_token_reflush : send = {
+      "aidx": 77,
+      "session": "16112049",
+      "cmd": 115
+    }
+    api_token_reflush : recv = {
+      "data": {
+        "api_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImFpZHgiOjc3LCJncmFkZSI6MH0sImlhdCI6MTY0MTUzNjI3NSwiZXhwIjoxNjQxNjIyNjc1fQ.26sDhLfCRLnySky_ii9A40wKMUt6pnFi7GuJJf5UWi4",
+        "api_token_expire": 86400
+      },
+      "cmd": 116,
+      "status": 200
+    }
+     
+	

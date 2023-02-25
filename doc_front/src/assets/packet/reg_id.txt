@@ -1,0 +1,32 @@
+계정을 생성합니다.
+
+
+  - Request -
+    - login_id : 고유한 로그인 ID String
+    - login_type : guest: 0, 현재는 타입이 게스트 한개뿐 
+    - uuid : 디바이스 고유 아이디 - 광고아이디 등을 추천함
+    - name : 사용자의 닉네임 => 게스트는 무조건 서버에서 임의 생성해서 응답에서 돌려줍니다.
+
+
+  - Response -
+    - name : 사용자 닉네임
+
+
+    reg_id : send = {
+      "login_id": "woongda",
+      "uuid": "woongda",
+      "login_type": 0,
+      "name": "woongda",
+      "cmd": 101,
+      "aidx": 0,
+      "session": ""
+    }
+    reg_id : recv = {
+      "data": {
+        "name": "(G)1658995339172-18275"
+      },
+      "cmd": 102,
+      "status": 200
+    }
+
+      

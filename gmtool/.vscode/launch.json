@@ -1,0 +1,37 @@
+{
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "run gmtool",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/index.js",
+      "cwd": "${workspaceFolder}",
+      "outputCapture": "std"
+      // "serverReadyAction": {
+      //     "pattern": "server running at http://localhost:([0-9]+)",
+      //     "uriFormat": "http://localhost:%s?email=rebel12@naver.com&pass=7259",
+      //     //"action": "debugWithChrome",
+      //     "action": "openExternally"
+      // }
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "run Chrome",
+      "url": "http://localhost:10100",
+      "webRoot": "${workspaceFolder}\\public\\js",
+      "sourceMaps": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "run node chrome",
+      "configurations": ["run gmtool", "run Chrome"]
+    }
+  ]
+}

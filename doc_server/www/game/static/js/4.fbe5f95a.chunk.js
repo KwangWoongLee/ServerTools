@@ -1,0 +1,1 @@
+(this.webpackJsonpgame_protocol=this.webpackJsonpgame_protocol||[]).push([[4],{52:function(t,o,a){"use strict";a.r(o),o.default=a.p+"static/media/_comon_recv_data.54ae0778.txt"}}]);

@@ -1,0 +1,55 @@
+
+    - 패킷 공통 데이타 : reward -
+어떤 패킷이든간에 재화 / 아이템 / 유니크 아이템 의 추가나 삭제시에는 공통으로 포함됩니다.
+- add_list : 추가된 내역입니다.
+- use_list : 소모된 내역입니다.
+
+공통 포함 변수
+- sort_no : 0 부터 시작하며 추가되거나 소모되니 내역마다 1씩 증가합니다. 소모되고 추가된 흐름을 파악할수 있습니다.
+- code : 아이템 코드입니다. (재화도 ref_item 테이블에 코드가 존재합니다)
+- prev_cnt : 소모되거나 추가되기 이전의 갯수입니다. : unique_item 의 경우에는 그리큰 의미는 없습니다.
+- cur_cnt : 소모되거나 추가된 이후의 갯수입니다. :  unique_item 의 경우에는 그리큰 의미는 없습니다.
+- type : G 골드, FC 무료보석, PC 유료보석, I item, UI unique item
+
+add_list
+ - add : 재화나 아이템 이라면 추가된 갯수 입니다. : unique item 이라면 추가된 item idx 입니다.
+ - durability : 내구도 : type 이 'UI' 일 경우에만 포함됩니다.
+ - enchant : 강화도 : type 이 'UI' 일 경우에만 포함됩니다.
+
+
+use_list
+ - sub : 재화나 아이템 이라면 소모된 갯수 입니다. : unique item 이라면 삭제된 item idx 입니다.
+
+"reward" : {
+ "add_list" : [
+	{
+        "sort_no": 0,
+        "code": 1,
+        "prev_cnt": 10000,
+        "cur_cnt": 10010,
+        "add": 10,
+        "type": "G"
+	},
+  {
+          "sort_no": 0,
+          "code": 30600002,
+          "prev_cnt": 0,
+          "cur_cnt": 1,
+          "type": "UI",
+          "durability": 55,     type 이 'UI' 일 경우에만 포함
+          "enchant": 10,        type 이 'UI' 일 경우에만 포함
+          "add": 1635
+  }
+ ],
+ "use_list" : [
+	{
+        "sort_no": 0,
+        "code": 1,
+        "prev_cnt": 10010,
+        "cur_cnt": 10000,
+        "sub": 10,
+        "type": "G"
+	}
+ ]
+}
+	

@@ -1,0 +1,18 @@
+.View {
+  width: 100%;
+  // width가 주어진 상태에서 좌우 중앙 정렬
+  margin-top: 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .proto {
+    min-height: 320px;
+    max-height: 800px;
+    overflow-y: auto;
+  }
+}
+
+.modal-90w {
+  min-width: 90%;
+  min-height: 800px;
+}
